@@ -1,12 +1,11 @@
 Package: marxanr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R interface for Marxan
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Remi Daigle
+Maintainer: Remi Daigle <Remi.Daigle@dfo-mpo.gc.ca>
+Description: An R interface for Marxan.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Suggests: 
