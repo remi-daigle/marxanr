@@ -29,20 +29,20 @@ Data from (Serdynska et al. 2021)[https://open.canada.ca/data/en/dataset/2d9cce9
 This first step is to download the raw data (if necessary).
 
 ```{r}
-if(!file.exists("MPA_NetworkDesign.gdb.zip")){
-  # download the archive
-  download.file("https://pacgis01.dfo-mpo.gc.ca/FGPPublic/Offshore_Ecological_Human_Use_MPA_Scotian%20Shelf/Download/MPA_NetworkDesign.gdb.zip","MPA_NetworkDesign.gdb.zip")
-  
-  # unzip 
-  unzip("MPA_NetworkDesign.gdb.zip")
-  
-  # load select layers
-  layers <- sf::st_layers("MPA_NetworkDesign.gdb")
-  gdb <- purrr::map(layers$name[c(6,30,58)],function(l) st_read("MPA_NetworkDesign.gdb",l)) %>% 
-    dplyr::bind_rows()
-    
-  
-  # BiophysicalUnits <- st_read("MPA_NetworkDesign.gdb","BiophysicalUnits")
-  }
+# if(!file.exists("MPA_NetworkDesign.gdb.zip")){
+#   # download the archive
+#   download.file("https://pacgis01.dfo-mpo.gc.ca/FGPPublic/Offshore_Ecological_Human_Use_MPA_Scotian%20Shelf/Download/MPA_NetworkDesign.gdb.zip","MPA_NetworkDesign.gdb.zip")
+#   
+#   # unzip 
+#   unzip("MPA_NetworkDesign.gdb.zip")
+#   
+#   # load select layers
+#   layers <- sf::st_layers("MPA_NetworkDesign.gdb")
+#   gdb <- purrr::map(layers$name[c(6,30,58)],function(l) st_read("MPA_NetworkDesign.gdb",l)) %>% 
+#     dplyr::bind_rows()
+#     
+#   
+#   # BiophysicalUnits <- st_read("MPA_NetworkDesign.gdb","BiophysicalUnits")
+#   }
 ```
 
