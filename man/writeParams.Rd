@@ -4,13 +4,12 @@
 \alias{writeParams}
 \title{Write Marxan Input Parameter File (input.dat) to disk}
 \usage{
-writeParams(inpudat, file)
+writeParams(inpudat = marxanr::newParams(), file = "input.dat")
 }
 \arguments{
-\item{inpudat}{}
-}
-\value{
+\item{inpudat}{a `marxanParams` class object to be written to disk. A `marxanParams` class object can be generated using `newParams()`}
 
+\item{file}{a character string naming the file}
 }
 \description{
 Write Marxan Input Parameter File (input.dat) to disk

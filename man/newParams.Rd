@@ -2,7 +2,8 @@
 % Please edit documentation in R/inputfiles.R
 \name{newParams}
 \alias{newParams}
-\title{Create new Marxan Input Parameter File (input.dat)}
+\title{Create new Marxan Input Parameter File (input.dat). See the Marxan User Manual for more information:
+Serra, N., Kockel, A., Game, E. T., Grantham H., Possingham H.P., & McGowan, J. (2020). Marxan User Manual: For Marxan version 2.43 and above. The Nature Conservancy (TNC), Arlington, Virginia, United States and Pacific Marine Analysis and Research Association (PacMARA), Victoria, British Columbia, Canada.}
 \usage{
 newParams(
   BLM = 1,
@@ -40,13 +41,76 @@ newParams(
 )
 }
 \arguments{
-\item{SAVESOLUTIONSMATRIX}{}
+\item{BLM}{Boundary Length Modifier}
+
+\item{PROP}{Proportion of planning units in initial reserve system}
+
+\item{RANDSEED}{Random seed number}
+
+\item{NUMREPS}{Number of repeat runs (or solutions)}
+
+\item{NUMITNS}{Number of iterations for annealing}
+
+\item{STARTTEMP}{Starting temperature for annealing}
+
+\item{NUMTEMP}{Number of temperature decreases for annealing}
+
+\item{COSTTHRESH}{Cost threshold}
+
+\item{THRESHPEN1}{Size of cost threshold penalty}
+
+\item{THRESHPEN2}{Shape of cost threshold penalty}
+
+\item{INPUTDIR}{Name of folder containing input data files}
+
+\item{PUNAME}{Name of Planning Unit File}
+
+\item{SPECNAME}{Name of Conservation Feature File}
+
+\item{PUVSPRNAME}{Name of Planning Unit versus Conservation Feature File}
+
+\item{BOUNDNAME}{Name of Boundary Length File}
+
+\item{SCENNAME}{Scenario name for the saved output file}
+
+\item{SAVERUN}{Save each run}
+
+\item{SAVEBEST}{Save the best run}
+
+\item{SAVESUMMARY}{Save summary information}
+
+\item{SAVESCEN}{Save scenario information}
+
+\item{SAVETARGMET}{Save targets met information}
+
+\item{SAVESUMSOLN}{Save summed solution information}
+
+\item{SAVEPENALTY}{Save computed feature penalties}
+
+\item{SAVELOG}{Save log files}
+
+\item{OUTPUTDIR}{Name of the folder in which to save output files}
+
+\item{RUNMODE}{Run option}
+
+\item{MISSLEVEL}{Species missing proportion}
+
+\item{ITIMPTYPE}{Iterative improvement}
+
+\item{HEURTYPE}{Heuristic}
+
+\item{CLUMPTYPE}{An integer code that sets the clumping rule. A value of 0L (default) is Partial clumps do not count– Clumps smaller than the target score nothing, 1L is Partial clumps count half– Clumps smaller than the target score half their amount, and 2L Graduated penalty– Score is proportional to the size of the clump}
+
+\item{VERBOSITY}{An integer code that sets screen printing options. A value of 0L is for Silent Running – Only the title of the program is displayed, 1L is Results Only – Marxan will display which run it is up to, the basic results of each run and the total run time, 2L is General Progress – In addition to the information about each run, Marxan will display information on the data that has been read in as well as details on any conservation features whose targets and requirements are such that they cannot be adequately reserved in the system, and 3L (default) is Detailed Progress – Shows exactly where the program is up to and gives the value of the system each time the temperature changes.}
+
+\item{SAVESOLUTIONSMATRIX}{An integer code to save planning units selected in for each run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 }
 \value{
-
+A 'marxanParams' class object
 }
 \description{
-Create new Marxan Input Parameter File (input.dat)
+Create new Marxan Input Parameter File (input.dat). See the Marxan User Manual for more information:
+Serra, N., Kockel, A., Game, E. T., Grantham H., Possingham H.P., & McGowan, J. (2020). Marxan User Manual: For Marxan version 2.43 and above. The Nature Conservancy (TNC), Arlington, Virginia, United States and Pacific Marine Analysis and Research Association (PacMARA), Victoria, British Columbia, Canada.
 }
 \examples{
 # Accepting all default values
