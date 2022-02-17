@@ -69,7 +69,7 @@ setClass("marxanParams",
                    OUTPUTDIR = "character",
 
                    RUNMODE = "integer",
-                   MISSLEVEL = "integer",
+                   MISSLEVEL = "numeric",
                    ITIMPTYPE = "integer",
                    HEURTYPE = "integer",
                    CLUMPTYPE = "integer",
@@ -77,38 +77,38 @@ setClass("marxanParams",
 
                    SAVESOLUTIONSMATRIX = "integer"))
 
-#' Create new Marxan Input Parameter File (input.dat). See the Marxan User Manual for more information:
+#' Create new Marxan Input Parameter File (input.dat). See the [Marxan User Manual](https://marxansolutions.org/wp-content/uploads/2021/02/Marxan-User-Manual_2021.pdf) for more information:
 #' Serra, N., Kockel, A., Game, E. T., Grantham H., Possingham H.P., & McGowan, J. (2020). Marxan User Manual: For Marxan version 2.43 and above. The Nature Conservancy (TNC), Arlington, Virginia, United States and Pacific Marine Analysis and Research Association (PacMARA), Victoria, British Columbia, Canada.
 #'
-#' @param BLM Boundary Length Modifier
-#' @param PROP Proportion of planning units in initial reserve system
-#' @param RANDSEED Random seed number
-#' @param NUMREPS Number of repeat runs (or solutions)
-#' @param NUMITNS Number of iterations for annealing
-#' @param STARTTEMP Starting temperature for annealing
-#' @param NUMTEMP Number of temperature decreases for annealing
-#' @param COSTTHRESH Cost threshold
-#' @param THRESHPEN1 Size of cost threshold penalty
-#' @param THRESHPEN2 Shape of cost threshold penalty
-#' @param INPUTDIR Name of folder containing input data files
-#' @param PUNAME Name of Planning Unit File
-#' @param SPECNAME Name of Conservation Feature File
-#' @param PUVSPRNAME Name of Planning Unit versus Conservation Feature File
-#' @param BOUNDNAME Name of Boundary Length File
-#' @param SCENNAME Scenario name for the saved output file
-#' @param SAVERUN Save each run
-#' @param SAVEBEST Save the best run
-#' @param SAVESUMMARY Save summary information
-#' @param SAVESCEN Save scenario information
-#' @param SAVETARGMET Save targets met information
-#' @param SAVESUMSOLN Save summed solution information
-#' @param SAVEPENALTY Save computed feature penalties
-#' @param SAVELOG Save log files
-#' @param OUTPUTDIR Name of the folder in which to save output files
-#' @param RUNMODE Run option
-#' @param MISSLEVEL Species missing proportion
-#' @param ITIMPTYPE Iterative improvement
-#' @param HEURTYPE Heuristic
+#' @param BLM A numeric value for the Boundary Length Modifier. Default is 1
+#' @param PROP Proportion of planning units in initial reserve system. Default is 0.5
+#' @param RANDSEED Random seed number. Default is -1
+#' @param NUMREPS Number (integer) of repeat runs (or solutions). Default is 10L
+#' @param NUMITNS Number (integer) of iterations for annealing. Default is 1000000L
+#' @param STARTTEMP A numeric value for the starting temperature for annealing. Default is -1
+#' @param NUMTEMP A numeric value for the temperature decreases for annealing. Default is 10000
+#' @param COSTTHRESH A numeric value for the cost threshold. Default is 0
+#' @param THRESHPEN1 A numeric value for the size of cost threshold penalty. Default is 0
+#' @param THRESHPEN2 A numeric value for the shape of cost threshold penalty. Default is 0
+#' @param INPUTDIR A character string naming the folder containing input data files. Default is "input".
+#' @param PUNAME A character string naming the Planning Unit File. Default is "pu.dat".
+#' @param SPECNAME A character string naming the Conservation Feature File. Default is "spec.dat".
+#' @param PUVSPRNAME A character string naming the Planning Unit versus Conservation Feature File. Default is "puvspr.dat".
+#' @param BOUNDNAME A character string naming the Boundary Length File. Default is "bound.dat".
+#' @param SCENNAME A character string for a scenario name appended to all the saved output files. Default is "output".
+#' @param SAVERUN An integer code to save each run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVEBEST An integer code to save the best run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVESUMMARY An integer code to save summary information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVESCEN An integer code to save scenario information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVETARGMET An integer code to save targets met information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVESUMSOLN An integer code to save summed solution information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVEPENALTY An integer code to save computed feature penalties. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
+#' @param SAVELOG An integer code to save log files. A value of 0L will not save a file, 1L saves the file as .dat, 2L (default) saves the file as .txt, and 3L saves the file as .csv.
+#' @param OUTPUTDIR A character string naming the folder in which to save output files. Default is "output".
+#' @param RUNMODE An Integer code that sets the run option. 0L Apply Simulated Annealing followed by a Heuristic; 1L (default) Apply Simulated Annealing followed by Iterative Improvement; 2L Apply Simulated Annealing followed by a Heuristic, followed by Iterative Improvement; 3L Use only a Heuristic; 4L Use only Iterative Improvement; 5L Use a Heuristic followed by Iterative Improvement; 6L Use only Simulated Annealing
+#' @param MISSLEVEL A numeric proportion representing the proportion of the target a conservation feature must reach in order for it to be reported as met. Default value is 1 (i.e. 100%)
+#' @param ITIMPTYPE An integer code that sets the iterative improvement. 0L (default) Normal Iterative Improvement; 1L Two Step Iterative Improvement; 2L ‘Swap’ Iterative Improvement; 3L Normal Improvement followed by Two Step Iterative Improvement
+#' @param HEURTYPE An integer code that sets the heuristic.0L Richness; 1L Greedy; 2L Max Rarity; 3L Best Rarity; 4L Average Rarity; 5L Sum Rarity; 6L Product Irreplaceability; 7L Summation Irreplaceability
 #' @param CLUMPTYPE An integer code that sets the clumping rule. A value of 0L (default) is Partial clumps do not count– Clumps smaller than the target score nothing, 1L is Partial clumps count half– Clumps smaller than the target score half their amount, and 2L Graduated penalty– Score is proportional to the size of the clump
 #' @param VERBOSITY An integer code that sets screen printing options. A value of 0L is for Silent Running – Only the title of the program is displayed, 1L is Results Only – Marxan will display which run it is up to, the basic results of each run and the total run time, 2L is General Progress – In addition to the information about each run, Marxan will display information on the data that has been read in as well as details on any conservation features whose targets and requirements are such that they cannot be adequately reserved in the system, and 3L (default) is Detailed Progress – Shows exactly where the program is up to and gives the value of the system each time the temperature changes.
 #' @param SAVESOLUTIONSMATRIX An integer code to save planning units selected in for each run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.
@@ -132,8 +132,8 @@ newParams <- function(BLM = 1,
                      NUMTEMP = 10000,
 
                      COSTTHRESH  = 0,
-                     THRESHPEN1  = 14,
-                     THRESHPEN2  = 1,
+                     THRESHPEN1  = 0,
+                     THRESHPEN2  = 0,
 
                      INPUTDIR = "input",
                      PUNAME = "pu.dat",
@@ -153,7 +153,7 @@ newParams <- function(BLM = 1,
                      OUTPUTDIR = "output",
 
                      RUNMODE = 1L,
-                     MISSLEVEL = 1L,
+                     MISSLEVEL = 1,
                      ITIMPTYPE = 0L,
                      HEURTYPE = -1L,
                      CLUMPTYPE = 0L,
