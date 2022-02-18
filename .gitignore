@@ -3,4 +3,4 @@
 .RData
 .Ruserdata
 inst/doc
-vignettes/MPA_NetworkDesign.gdb*
+data-raw/MPA_NetworkDesign.gdb*
