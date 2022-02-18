@@ -2,7 +2,7 @@
 % Please edit documentation in R/inputfiles.R
 \name{newParams}
 \alias{newParams}
-\title{Create new Marxan Input Parameter File (input.dat). See the Marxan User Manual for more information:
+\title{Create new Marxan Input Parameter File (input.dat). See the [Marxan User Manual](https://marxansolutions.org/wp-content/uploads/2021/02/Marxan-User-Manual_2021.pdf) for more information:
 Serra, N., Kockel, A., Game, E. T., Grantham H., Possingham H.P., & McGowan, J. (2020). Marxan User Manual: For Marxan version 2.43 and above. The Nature Conservancy (TNC), Arlington, Virginia, United States and Pacific Marine Analysis and Research Association (PacMARA), Victoria, British Columbia, Canada.}
 \usage{
 newParams(
@@ -14,8 +14,8 @@ newParams(
   STARTTEMP = -1,
   NUMTEMP = 10000,
   COSTTHRESH = 0,
-  THRESHPEN1 = 14,
-  THRESHPEN2 = 1,
+  THRESHPEN1 = 0,
+  THRESHPEN2 = 0,
   INPUTDIR = "input",
   PUNAME = "pu.dat",
   SPECNAME = "spec.dat",
@@ -32,7 +32,7 @@ newParams(
   SAVELOG = 2L,
   OUTPUTDIR = "output",
   RUNMODE = 1L,
-  MISSLEVEL = 1L,
+  MISSLEVEL = 1,
   ITIMPTYPE = 0L,
   HEURTYPE = -1L,
   CLUMPTYPE = 0L,
@@ -41,63 +41,63 @@ newParams(
 )
 }
 \arguments{
-\item{BLM}{Boundary Length Modifier}
+\item{BLM}{A numeric value for the Boundary Length Modifier. Default is 1}
 
-\item{PROP}{Proportion of planning units in initial reserve system}
+\item{PROP}{Proportion of planning units in initial reserve system. Default is 0.5}
 
-\item{RANDSEED}{Random seed number}
+\item{RANDSEED}{Random seed number. Default is -1}
 
-\item{NUMREPS}{Number of repeat runs (or solutions)}
+\item{NUMREPS}{Number (integer) of repeat runs (or solutions). Default is 10L}
 
-\item{NUMITNS}{Number of iterations for annealing}
+\item{NUMITNS}{Number (integer) of iterations for annealing. Default is 1000000L}
 
-\item{STARTTEMP}{Starting temperature for annealing}
+\item{STARTTEMP}{A numeric value for the starting temperature for annealing. Default is -1}
 
-\item{NUMTEMP}{Number of temperature decreases for annealing}
+\item{NUMTEMP}{A numeric value for the temperature decreases for annealing. Default is 10000}
 
-\item{COSTTHRESH}{Cost threshold}
+\item{COSTTHRESH}{A numeric value for the cost threshold. Default is 0}
 
-\item{THRESHPEN1}{Size of cost threshold penalty}
+\item{THRESHPEN1}{A numeric value for the size of cost threshold penalty. Default is 0}
 
-\item{THRESHPEN2}{Shape of cost threshold penalty}
+\item{THRESHPEN2}{A numeric value for the shape of cost threshold penalty. Default is 0}
 
-\item{INPUTDIR}{Name of folder containing input data files}
+\item{INPUTDIR}{A character string naming the folder containing input data files. Default is "input".}
 
-\item{PUNAME}{Name of Planning Unit File}
+\item{PUNAME}{A character string naming the Planning Unit File. Default is "pu.dat".}
 
-\item{SPECNAME}{Name of Conservation Feature File}
+\item{SPECNAME}{A character string naming the Conservation Feature File. Default is "spec.dat".}
 
-\item{PUVSPRNAME}{Name of Planning Unit versus Conservation Feature File}
+\item{PUVSPRNAME}{A character string naming the Planning Unit versus Conservation Feature File. Default is "puvspr.dat".}
 
-\item{BOUNDNAME}{Name of Boundary Length File}
+\item{BOUNDNAME}{A character string naming the Boundary Length File. Default is "bound.dat".}
 
-\item{SCENNAME}{Scenario name for the saved output file}
+\item{SCENNAME}{A character string for a scenario name appended to all the saved output files. Default is "output".}
 
-\item{SAVERUN}{Save each run}
+\item{SAVERUN}{An integer code to save each run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVEBEST}{Save the best run}
+\item{SAVEBEST}{An integer code to save the best run. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVESUMMARY}{Save summary information}
+\item{SAVESUMMARY}{An integer code to save summary information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVESCEN}{Save scenario information}
+\item{SAVESCEN}{An integer code to save scenario information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVETARGMET}{Save targets met information}
+\item{SAVETARGMET}{An integer code to save targets met information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVESUMSOLN}{Save summed solution information}
+\item{SAVESUMSOLN}{An integer code to save summed solution information. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVEPENALTY}{Save computed feature penalties}
+\item{SAVEPENALTY}{An integer code to save computed feature penalties. A value of 0L will not save a file, 1L saves the file as .dat, 2L saves the file as .txt, and 3L (default) saves the file as .csv.}
 
-\item{SAVELOG}{Save log files}
+\item{SAVELOG}{An integer code to save log files. A value of 0L will not save a file, 1L saves the file as .dat, 2L (default) saves the file as .txt, and 3L saves the file as .csv.}
 
-\item{OUTPUTDIR}{Name of the folder in which to save output files}
+\item{OUTPUTDIR}{A character string naming the folder in which to save output files. Default is "output".}
 
-\item{RUNMODE}{Run option}
+\item{RUNMODE}{An Integer code that sets the run option. 0L Apply Simulated Annealing followed by a Heuristic; 1L (default) Apply Simulated Annealing followed by Iterative Improvement; 2L Apply Simulated Annealing followed by a Heuristic, followed by Iterative Improvement; 3L Use only a Heuristic; 4L Use only Iterative Improvement; 5L Use a Heuristic followed by Iterative Improvement; 6L Use only Simulated Annealing}
 
-\item{MISSLEVEL}{Species missing proportion}
+\item{MISSLEVEL}{A numeric proportion representing the proportion of the target a conservation feature must reach in order for it to be reported as met. Default value is 1 (i.e. 100 \%)}
 
-\item{ITIMPTYPE}{Iterative improvement}
+\item{ITIMPTYPE}{An integer code that sets the iterative improvement. 0L (default) Normal Iterative Improvement; 1L Two Step Iterative Improvement; 2L ‘Swap’ Iterative Improvement; 3L Normal Improvement followed by Two Step Iterative Improvement}
 
-\item{HEURTYPE}{Heuristic}
+\item{HEURTYPE}{An integer code that sets the heuristic.0L Richness; 1L Greedy; 2L Max Rarity; 3L Best Rarity; 4L Average Rarity; 5L Sum Rarity; 6L Product Irreplaceability; 7L Summation Irreplaceability}
 
 \item{CLUMPTYPE}{An integer code that sets the clumping rule. A value of 0L (default) is Partial clumps do not count– Clumps smaller than the target score nothing, 1L is Partial clumps count half– Clumps smaller than the target score half their amount, and 2L Graduated penalty– Score is proportional to the size of the clump}
 
@@ -109,7 +109,7 @@ newParams(
 A 'marxanParams' class object
 }
 \description{
-Create new Marxan Input Parameter File (input.dat). See the Marxan User Manual for more information:
+Create new Marxan Input Parameter File (input.dat). See the [Marxan User Manual](https://marxansolutions.org/wp-content/uploads/2021/02/Marxan-User-Manual_2021.pdf) for more information:
 Serra, N., Kockel, A., Game, E. T., Grantham H., Possingham H.P., & McGowan, J. (2020). Marxan User Manual: For Marxan version 2.43 and above. The Nature Conservancy (TNC), Arlington, Virginia, United States and Pacific Marine Analysis and Research Association (PacMARA), Victoria, British Columbia, Canada.
 }
 \examples{
