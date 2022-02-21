@@ -36,7 +36,6 @@
 #' @return
 #' @export
 #'
-#' @examples
 setClass("marxanParams",
          slots = c(BLM = "numeric",
                    PROP = "numeric",
