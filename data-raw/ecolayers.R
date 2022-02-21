@@ -19,7 +19,8 @@ ecolayers <- purrr::map(layers$name[layers$features==1],
   dplyr::bind_rows() %>%
   dplyr::select(layer) %>%
   st_simplify(preserveTopology = TRUE,
-              dTolerance = 1000)
+              dTolerance = 1000) %>%
+  st_make_valid()
 
 
 sf::st_geometry(ecolayers) <-  "geometry"
