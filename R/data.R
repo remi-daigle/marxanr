@@ -22,3 +22,14 @@
 #' @source \url{https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2}
 
 "costs"
+
+
+#' @title pu
+#' @description hexagonal planning units created for marxanr package demonstrations
+#' @format A data frame with 2794 rows and 2 variables:
+#' \describe{
+#'   \item{\code{id}}{character planning unit ID}
+#'   \item{\code{geometry}}{list the simple features column (sfc) describing the planning units}
+#'}
+#' @details DETAILS
+"pu"
