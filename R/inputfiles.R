@@ -178,14 +178,14 @@ newParams <- function(BLM = 1,
 #' Write Marxan Input Parameter File (input.dat) to disk
 #'
 #' @param file a character string naming the file
-#' @param inpudat a `marxanParams` class object to be written to disk. A `marxanParams` class object can be generated using `newParams()`
+#' @param inputdat a `marxanParams` class object to be written to disk. A `marxanParams` class object can be generated using `newParams()`
 #'
 #' @export
 #'
 #' @examples
 #' inputdat <- newParams(BLM = 1000)
 #' writeParams(inputdat,"input.dat")
-writeParams <- function(inpudat = marxanr::newParams(),
+writeParams <- function(inputdat,
                         file = "input.dat"){
   if(class(inputdat)!="marxanParams") stop("The value provided for 'inputdat' is not a 'marxanParams' object. A 'marxanParams' class object can be generated using `newParams()")
   writeLines(paste0(
