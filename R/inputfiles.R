@@ -137,7 +137,7 @@ newParams <- function(BLM = 1,
                      INPUTDIR = "input",
                      PUNAME = "pu.dat",
                      SPECNAME = "spec.dat",
-                     PUVSPRNAME = "puvsp.dat",
+                     PUVSPRNAME = "puvspr.dat",
                      BOUNDNAME = "bound.dat",
 
                      SCENNAME = "output",

@@ -53,7 +53,7 @@ unzip(temp,exdir = getwd())
 unlink(temp)
 
 # create new input parameters
-input <- newParams(NUMREPS = 5L,SCENNAME = scen)
+input <- newParams(NUMREPS = 5L,SCENNAME = scen,PUVSPRNAME = "puvsp.dat")
 writeParams(inputdat = input,file = "input_demo.dat")
 
 # run marxan
