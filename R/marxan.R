@@ -96,5 +96,5 @@ runMarxan <- function(os="win",marxanpath=getwd(),inputdatfile=file.path(marxanp
   }
 
   # run marxan
-  system2(exec, args = "MarxanData/input.dat")
+  system2(exec, args = input)
 }
