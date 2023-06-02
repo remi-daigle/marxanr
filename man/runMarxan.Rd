@@ -18,7 +18,7 @@ runMarxan(
 \item{inputdatfile}{character string for the file path for the Marxan input parameter file. Default is "input.dat" in the "marxanpath" directory. If there is a file that matches a relative path "inputdatfile" relative to both the user's current working directory AND the "marxanpath" directory, this function will use the file in the "marxanpath" directory.}
 }
 \value{
-
+output files
 }
 \description{
 runMarxan

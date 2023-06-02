@@ -31,7 +31,8 @@ costs <- purrr::map(layers$name[layers$features==48815],
   dplyr::summarize(WEIGHTMT = sum(WEIGHTMT)) %>%
   dplyr::ungroup() %>%
   dplyr::left_join(sfc,by="id") %>%
-  dplyr::select(-id)
+  dplyr::select(-id) %>%
+  sf::st_as_sf()
 
 sf::st_geometry(costs) <-  "geometry"
 

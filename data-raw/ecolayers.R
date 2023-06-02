@@ -10,7 +10,7 @@ if(!file.exists("data-raw/MPA_NetworkDesign.gdb")){
 # load select layers
 layers <- sf::st_layers("data-raw/MPA_NetworkDesign.gdb")
 
-
+sf::sf_use_s2(FALSE)
 ecolayers <- purrr::map(layers$name[layers$features==1],
                         function(l) {
                           sf::st_read("data-raw/MPA_NetworkDesign.gdb",l) %>%
@@ -18,10 +18,10 @@ ecolayers <- purrr::map(layers$name[layers$features==1],
                         }) %>%
   dplyr::bind_rows() %>%
   dplyr::select(layer) %>%
-  st_simplify(preserveTopology = TRUE,
+  sf::st_simplify(preserveTopology = TRUE,
               dTolerance = 1000) %>%
-  st_make_valid()
-
+  sf::st_make_valid()
+sf::sf_use_s2(TRUE)
 
 sf::st_geometry(ecolayers) <-  "geometry"
 

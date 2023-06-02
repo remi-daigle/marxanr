@@ -6,7 +6,7 @@
 #' @param path character string for the destination path. Defaults to the current working directory.
 #' @param ver character string for the version number. Default is "4.0.6"
 #'
-#' @return
+#' @return files
 #' @export
 #'
 #' @examples
@@ -52,7 +52,7 @@ downloadMarxan <- function(os="win",path=getwd(),ver="4.0.6"){
 #' @param marxanpath character string for the directory of the Marxan executable. Default is the current working directory.
 #' @param inputdatfile character string for the file path for the Marxan input parameter file. Default is "input.dat" in the "marxanpath" directory. If there is a file that matches a relative path "inputdatfile" relative to both the user's current working directory AND the "marxanpath" directory, this function will use the file in the "marxanpath" directory.
 #'
-#' @return
+#' @return output files
 #' @export
 #'
 #' @examples

@@ -33,7 +33,7 @@
 #' @slot VERBOSITY integer.
 #' @slot SAVESOLUTIONSMATRIX integer.
 #'
-#' @return
+#' @return class
 #' @export
 #'
 setClass("marxanParams",

@@ -5,7 +5,7 @@
 \alias{marxanParams-class}
 \title{marxanParams: class that represents the Marxan Input Paramaters}
 \value{
-
+class
 }
 \description{
 marxanParams: class that represents the Marxan Input Paramaters

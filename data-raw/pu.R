@@ -1,4 +1,5 @@
-planningarea <- dplyr::bind_rows(sf::st_make_valid(marxanr::ecolayers),marxanr::costs)
+planningarea <- dplyr::bind_rows(marxanr::ecolayers,marxanr::costs) %>%
+  sf::st_make_valid()
 
 pu <- sf::st_make_grid(planningarea,
                        square=FALSE,

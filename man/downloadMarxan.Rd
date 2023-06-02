@@ -14,7 +14,7 @@ downloadMarxan(os = "win", path = getwd(), ver = "4.0.6")
 \item{ver}{character string for the version number. Default is "4.0.6"}
 }
 \value{
-
+files
 }
 \description{
 Download Marxan from the releases on the [github repository](https://github.com/Marxan-source-code/marxan/releases)
