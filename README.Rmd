@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/remi-daigle/marxanr/workflows/R-CMD-check/badge.svg)](https://github.com/remi-daigle/marxanr/actions)
+[![R-CMD-check](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of marxanr is to help users prepare input files before running [Marxan](https://marxansolutions.org/), and interpret results in a reproducible workflow in R. This package is under development.

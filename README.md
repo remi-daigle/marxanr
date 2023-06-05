@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/remi-daigle/marxanr/workflows/R-CMD-check/badge.svg)](https://github.com/remi-daigle/marxanr/actions)
+[![R-CMD-check](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of marxanr is to help users prepare input files before running
@@ -45,7 +46,7 @@ unzip(temp,exdir = getwd())
 unlink(temp)
 
 # create new input parameters
-input <- newParams(NUMREPS = 5L,SCENNAME = scen)
+input <- newParams(NUMREPS = 5L,SCENNAME = scen,PUVSPRNAME = "puvsp.dat")
 writeParams(inputdat = input,file = "input_demo.dat")
 
 # run marxan
