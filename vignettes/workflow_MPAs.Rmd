@@ -2,7 +2,7 @@
 title: "Example workflow - DFO Maritimes MPAs"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{my-vignette}
+  %\VignetteIndexEntry{Example workflow - DFO Maritimes MPAs}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
