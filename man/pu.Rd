@@ -7,7 +7,7 @@
 \format{
 A data frame with 2794 rows and 2 variables:
 \describe{
-  \item{\code{id}}{character planning unit ID}
+  \item{\code{id}}{character planning unit id}
   \item{\code{geometry}}{list the simple features column (sfc) describing the planning units}
 }
 }
@@ -18,6 +18,6 @@ pu
 hexagonal planning units created for marxanr package demonstrations
 }
 \details{
-DETAILS
+R script to create the data is in [data-raw/pu.R](https://github.com/remi-daigle/marxanr/blob/main/data-raw/pu.R)
 }
 \keyword{datasets}

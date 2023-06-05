@@ -13,4 +13,4 @@ pu <- pu[c("id","geometry")]
 usethis::use_data(pu, overwrite = TRUE, compress = "xz")
 
 sinew::makeOxygen(pu)
-#copy the sinew output to data/data.R and fill it out
+#copy the sinew output to R/data.R and fill it out

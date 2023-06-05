@@ -28,5 +28,5 @@ sf::st_geometry(ecolayers) <-  "geometry"
 usethis::use_data(ecolayers, overwrite = TRUE, compress = "xz")
 
 sinew::makeOxygen(ecolayers)
-#copy the sinew output to data/data.R and fill it out
+#copy the sinew output to R/data.R and fill it out
 

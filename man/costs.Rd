@@ -8,11 +8,8 @@
 A data frame with 48815 rows and 2 variables:
 \describe{
   \item{\code{WEIGHTMT}}{double Sum of the fisheries landings}
-  \item{\code{Shape}}{list the simple features column (sfc) describing grid cells}
+  \item{\code{geometry}}{list the simple features column (sfc) describing grid cells}
 }
-}
-\source{
-\url{https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2}
 }
 \usage{
 costs

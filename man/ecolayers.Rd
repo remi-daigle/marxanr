@@ -7,12 +7,9 @@
 \format{
 A data frame with 78 rows and 2 variables:
 \describe{
-  \item{\code{layer}}{character the layer name}
-  \item{\code{geometry}}{list the simple features column (sfc) describing the habitat polygons}
+  \item{\code{layer}}{character ecolayer id}
+  \item{\code{geometry}}{list geometry column (sfc)}
 }
-}
-\source{
-\url{https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2}
 }
 \usage{
 ecolayers

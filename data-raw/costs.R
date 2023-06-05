@@ -39,6 +39,6 @@ sf::st_geometry(costs) <-  "geometry"
 usethis::use_data(costs, overwrite = TRUE, compress = "xz")
 
 sinew::makeOxygen(costs)
-#copy the sinew output to data/data.R and fill it out
+#copy the sinew output to R/data.R and fill it out
 
 
