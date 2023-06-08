@@ -4,3 +4,4 @@
 .Ruserdata
 inst/doc
 data-raw/MPA_NetworkDesign.gdb*
+vignettes/MPAtest*

@@ -240,3 +240,42 @@ SAVESOLUTIONSMATRIX ", inputdat@SAVESOLUTIONSMATRIX),
 con=file
 )
 }
+
+
+#' Create a Marxan folder
+#'
+#' @param wd The directory in which you would like to create the new Marxan folder. Defaults to your current working directory (i.e. `getwd()`)
+#' @param scen The name of the new Marxan folder. Defaults to "demo"
+#' @param input The name of the input folder inside the new Marxan folder. Defaults to "input"
+#' @param output The name of the input folder inside the new Marxan folder. Defaults to "output"
+#' @param dialog Overide the system dialog. THe default TRUE will leave the dialog on, and FALSE will turn the dialog off.
+#'
+#' @return new directory
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' createMarxanFolder(scen="testingnewfolders")
+#' }
+createMarxanFolder <- function(wd=getwd(),scen="demo",input="input",output="output",dialog=TRUE){
+  s <- file.path(wd,scen)
+  i <- file.path(wd,scen,input)
+  o <- file.path(wd,scen,output)
+  createmsg <- paste0("Creating: ",s," and subfloders: ", input, " and ",output)
+  if(dialog){
+    switch(utils::menu(title=paste0("This function will create new folders in: \n",
+                             wd,
+                             "\n Would you like to proceed?"),
+                c("Yes", "No")) + 1,
+           cat("Nothing done\n"),
+           cat(createmsg),
+           stop("Task terminated"))
+  } else {
+    cat(createmsg)
+  }
+
+
+  dir.create(s)
+  dir.create(i)
+  dir.create(o)
+}
