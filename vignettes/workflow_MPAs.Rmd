@@ -28,9 +28,7 @@ This vignette provides step by step guidance to take spatial data layers, transf
 
 # Loading data layers
 
-Data for this example, which are included in this package, are derived from [Serdynska et al. 2021](https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2) will be used in this example. These data are the available bioregional-scale ecological and human use data used to inform draft Marine Protected Area (MPA) design for the Scotian Shelf-Bay of Fundy Bioregion. Please see the [original technical report](https://publications.gc.ca/collections/collection_2021/mpo-dfo/Fs97-6-3382-eng.pdf) for further details.
 
-*While the input data are "real", the following example is NOT to be interpreted in any way as a suggestion for real MPA placement. The example is to show that you CAN run Marxan via R with real data. The example has not been properly paramaterized or optimized.*
 
 ## Spatial data
 ```{r}
@@ -62,6 +60,9 @@ basemap+
 ```
 ## Marxan data
 
+Data for this example, which are included in this package, are derived from [Serdynska et al. 2021](https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2) will be used in this example. These data are the available bioregional-scale ecological and human use data used to inform draft Marine Protected Area (MPA) design for the Scotian Shelf-Bay of Fundy Bioregion. Please see the [original technical report](https://publications.gc.ca/collections/collection_2021/mpo-dfo/Fs97-6-3382-eng.pdf) for further details.
+
+*While the input data are "real", the following example is NOT to be interpreted in any way as a suggestion for real MPA placement. The example is to show that you CAN run Marxan via R with real data. The example has not been properly paramaterized or optimized.*
 
 ```{r}
 data("spec")
@@ -69,10 +70,10 @@ data("puvspr")
 data("pu_dat")
 data("bound")
 
-spec
-puvspr
-pu_dat
-bound
+head(spec)
+head(puvspr)
+head(pu_dat)
+head(bound)
 ```
 
 # Creating a Marxan project folder

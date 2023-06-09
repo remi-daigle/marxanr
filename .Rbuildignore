@@ -4,3 +4,6 @@
 ^README\.Rmd$
 ^data-raw$
 ^vignettes/MPAtest$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

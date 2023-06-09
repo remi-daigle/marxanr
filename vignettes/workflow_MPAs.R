@@ -46,10 +46,10 @@ data("puvspr")
 data("pu_dat")
 data("bound")
 
-spec
-puvspr
-pu_dat
-bound
+head(spec)
+head(puvspr)
+head(pu_dat)
+head(bound)
 
 ## -----------------------------------------------------------------------------
 # name for new scenario
