@@ -18,7 +18,10 @@ Suggests:
     ggplot2,
     rnaturalearth,
     rnaturalearthhires,
-    sf
+    sf,
+    remotes
+remotes: 
+    ropensci/rnaturalearthhires
 VignetteBuilder: knitr
 RoxygenNote: 7.2.3
 Depends: 
