@@ -21,7 +21,7 @@ library(ggplot2)
 library(dplyr)
 library(sf)
 library(rnaturalearth)
-library(rnaturalearthhires)
+if(!require(rnaturalearthhires)) remotes::install_github("ropensci/rnaturalearthhires")
 ```
 
 This vignette provides step by step guidance to take spatial data layers, transform these into Marxan inputs, run Marxan, then load and interpret the results.
