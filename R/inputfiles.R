@@ -182,8 +182,10 @@ newParams <- function(BLM = 1,
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' inputdat <- newParams(BLM = 1000)
 #' writeParams(inputdat,"input.dat")
+#' }
 writeParams <- function(inputdat,
                         file = "input.dat"){
   if(!methods::is(inputdat,"marxanParams")) stop("The value provided for 'inputdat' is not a 'marxanParams' object. A 'marxanParams' class object can be generated using `newParams()")

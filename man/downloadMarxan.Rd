@@ -20,5 +20,7 @@ files
 Download Marxan from the releases on the [github repository](https://github.com/Marxan-source-code/marxan/releases)
 }
 \examples{
+\dontrun{
 downloadMarxan(os="win")
+}
 }

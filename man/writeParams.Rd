@@ -15,6 +15,8 @@ writeParams(inputdat, file = "input.dat")
 Write Marxan Input Parameter File (input.dat) to disk
 }
 \examples{
+\dontrun{
 inputdat <- newParams(BLM = 1000)
 writeParams(inputdat,"input.dat")
+}
 }

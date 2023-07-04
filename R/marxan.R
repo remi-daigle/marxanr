@@ -10,7 +10,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' downloadMarxan(os="win")
+#' }
 downloadMarxan <- function(os="win",path=getwd(),ver="4.0.6"){
   temp <- tempfile()
 
