@@ -49,6 +49,7 @@ basemap+
   ggcoords
   
 ```
+
 ## Marxan data
 
 Data for this example, which are included in this package, are derived from [Serdynska et al. 2021](https://open.canada.ca/data/en/dataset/2d9cce9a-d634-4b49-879f-87c40c52acf2) will be used in this example. These data are the available bioregional-scale ecological and human use data used to inform draft Marine Protected Area (MPA) design for the Scotian Shelf-Bay of Fundy Bioregion. Please see the [original technical report](https://publications.gc.ca/collections/collection_2021/mpo-dfo/Fs97-6-3382-eng.pdf) for further details.
@@ -73,7 +74,7 @@ head(bound)
 scen <- "MPAtest"
 
 ```
-```{r}
+```{r, eval=FALSE}
 # create a folder for a new scenario
 createMarxanFolder(scen=scen,dialog = FALSE)
 
@@ -95,6 +96,7 @@ runMarxan(marxanpath = scen,
           inputdatfile = "input.dat")
 # unlink(scen,recursive = TRUE) # if necessary
 ```
+
 # Plotting results
 
 ```{r}
