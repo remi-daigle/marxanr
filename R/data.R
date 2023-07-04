@@ -80,3 +80,14 @@
 #'}
 #' @details R script to create the data is in [data-raw/bound.R](https://github.com/remi-daigle/marxanr/blob/main/data-raw/bound.R)
 "bound"
+
+
+#' @title land
+#' @description An sf object describing the land near the MPA workflow vignette. Cropped from the rnaturalearth package.
+#' @format A data frame with 3 rows and 2 variables:
+#' \describe{
+#'   \item{\code{name}}{character Country name}
+#'   \item{\code{geometry}}{list the simple features column (sfc) describing the land}
+#'}
+#' @details R script to create the data is in [data-raw/land.R](https://github.com/remi-daigle/marxanr/blob/main/data-raw/land.R)
+"land"

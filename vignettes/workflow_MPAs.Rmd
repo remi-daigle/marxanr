@@ -20,8 +20,6 @@ library(marxanr)
 library(ggplot2)
 library(dplyr)
 library(sf)
-library(rnaturalearth)
-if(!require(rnaturalearthhires)) remotes::install_github("ropensci/rnaturalearthhires")
 ```
 
 This vignette provides step by step guidance to take spatial data layers, transform these into Marxan inputs, run Marxan, then load and interpret the results.
@@ -32,17 +30,10 @@ This vignette provides step by step guidance to take spatial data layers, transf
 
 ## Spatial data
 ```{r}
-# the spatial planning units
 data(pu)
 
 # landmasses for plotting
-land <- ne_countries(
-  country = c("Canada",
-              "United States of America",
-              "Saint Pierre and Miquelon"),
-  scale = 10,
-  returnclass = "sf") %>% 
-  st_crop(st_buffer(st_union(pu),100000)) # cropped to 100km of the pu
+data(land)
 
 # x and y limits to make nicer plots
 xlim <- st_bbox(pu)[c(1,3)]
