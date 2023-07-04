@@ -5,7 +5,6 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/remi-daigle/marxanr/workflows/R-CMD-check/badge.svg)](https://github.com/remi-daigle/marxanr/actions)
 [![R-CMD-check](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/remi-daigle/marxanr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
