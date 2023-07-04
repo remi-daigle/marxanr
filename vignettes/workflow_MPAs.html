@@ -355,16 +355,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;sf&#39; was built under R version 4.2.3</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;rnaturalearth&#39; was built under R version 4.2.3</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The legacy packages maptools, rgdal, and rgeos, underpinning this package</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; will retire shortly. Please refer to R-spatial evolution reports on</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; https://r-spatial.org/r/2023/05/15/evolution4.html for details.</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; This package is now running under evolution status 0</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Support for Spatial objects (`sp`) will be deprecated in {rnaturalearth} and will be removed in a future release of the package. Please use `sf` objects with {rnaturalearth}. For example: `ne_download(returnclass = &#39;sf&#39;)`</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(rnaturalearthhires)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;ropensci/rnaturalearthhires&quot;</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: rnaturalearthhires</span></span></code></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</span></span></code></pre></div>
 <p>This vignette provides step by step guidance to take spatial data
 layers, transform these into Marxan inputs, run Marxan, then load and
 interpret the results.</p>
@@ -453,24 +444,32 @@ example has not been properly paramaterized or optimized.</em></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a folder for a new scenario</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">createMarxanFolder</span>(<span class="at">scen=</span>scen,<span class="at">dialog =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Creating: C:/Users/DAIGLER/Documents/GitHub/marxanr/vignettes/MPAtest and subfloders: input and output</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># download marxan if necessary</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">downloadMarxan</span>(<span class="at">path =</span> scen)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># write marxan files to folder</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(spec,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;spec.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(puvspr,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;puvspr.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(pu_dat,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;pu.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bound,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;bound.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create new input parameters</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">newParams</span>(<span class="at">BLM=</span><span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>,<span class="at">NUMREPS =</span> 50L,<span class="at">SCENNAME =</span> scen)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">writeParams</span>(<span class="at">inputdat =</span> input,<span class="at">file =</span> <span class="fu">file.path</span>(scen,<span class="st">&quot;input.dat&quot;</span>))</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># run marxan</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">runMarxan</span>(<span class="at">marxanpath =</span> scen,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">inputdatfile =</span> <span class="st">&quot;input.dat&quot;</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># unlink(scen,recursive = TRUE) # if necessary</span></span></code></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in dir.create(s):</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;C:\Users\DAIGLER\Documents\GitHub\marxanr\vignettes\MPAtest&#39; already exists</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in dir.create(i):</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;C:\Users\DAIGLER\Documents\GitHub\marxanr\vignettes\MPAtest\input&#39; already</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exists</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning in dir.create(o):</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;C:\Users\DAIGLER\Documents\GitHub\marxanr\vignettes\MPAtest\output&#39; already</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; exists</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># download marxan if necessary</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">downloadMarxan</span>(<span class="at">path =</span> scen)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># write marxan files to folder</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(spec,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;spec.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(puvspr,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;puvspr.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(pu_dat,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;pu.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bound,<span class="fu">file.path</span>(scen,<span class="st">&quot;input&quot;</span>,<span class="st">&quot;bound.dat&quot;</span>),<span class="at">quote =</span> <span class="cn">FALSE</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create new input parameters</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span> <span class="fu">newParams</span>(<span class="at">BLM=</span><span class="dv">10</span><span class="sc">^</span><span class="dv">5</span>,<span class="at">NUMREPS =</span> 50L,<span class="at">SCENNAME =</span> scen)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">writeParams</span>(<span class="at">inputdat =</span> input,<span class="at">file =</span> <span class="fu">file.path</span>(scen,<span class="st">&quot;input.dat&quot;</span>))</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># run marxan</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">runMarxan</span>(<span class="at">marxanpath =</span> scen,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">inputdatfile =</span> <span class="st">&quot;input.dat&quot;</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># unlink(scen,recursive = TRUE) # if necessary</span></span></code></pre></div>
 </div>
 <div id="plotting-results" class="section level1">
 <h1>Plotting results</h1>
