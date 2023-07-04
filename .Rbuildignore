@@ -3,6 +3,7 @@
 ^\.github$
 ^README\.Rmd$
 ^data-raw$
+^vignettes/MPAtest/Marxan_x64.exe
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
